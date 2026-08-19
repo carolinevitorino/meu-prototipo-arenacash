@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArenaCash — Indique um amigo e ganhe R$ 50</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  /* ===== Design tokens — ArenaCash design system v3.0 ===== */
+  :root{
+    --brand-red: #ff494c;
+    --brand-red-hover: #e63b3e;
+    --brand-black: #0a0a0a;
+    --brand-white: #ffffff;
+    --neutral-900: #141414;
+    --neutral-700: #333333;
+    --neutral-500: #7a7a7a;
+    --neutral-300: #d1d1d1;
+    --stage-bg: #e7e7e7;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html, body{ height:100%; background: var(--stage-bg); font-family:"Inter", system-ui, sans-serif; }
+
+  body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    padding: 32px;
+  }
+
+  /* ===== Slide stage — capa (type: cover) ===== */
+  .slide{
+    position:relative;
+    width:min(100%, 1280px);
+    aspect-ratio: 16 / 9;
+    overflow:hidden;
+    background: var(--brand-black); /* surface/dark, sem gradientes */
+    color: var(--brand-white);
+    box-shadow: 0 30px 70px -25px rgba(10, 10, 10, 0.5);
+  }
+
+  .content{
+    position:relative;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding: 0 8% 4% 8%;
+  }
+
+  /* ===== Header: wordmark + logo Product Arena ===== */
+  .header{
+    position:absolute;
+    top: 40px;
+    left: 8%;
+    right: 8%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .wordmark{
+    font-family:"Archivo", sans-serif;
+    font-weight:900;
+    font-size: clamp(15px, 1.5vw, 19px);
+    letter-spacing: -0.01em;
+  }
+  .wordmark .cash{ color: var(--brand-red); }
+
+  .pa-logo{
+    font-family:"Inter", sans-serif;
+    font-weight:600;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    color: var(--brand-red);
+    white-space: nowrap;
+  }
+
+  /* ===== Eyebrow label — estilo PA, caps espaçadas ===== */
+  .eyebrow{
+    font-family:"Inter", sans-serif;
+    font-weight:600;
+    font-size: clamp(11px, 1vw, 13px);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--brand-red);
+    margin-bottom: 24px;
+  }
+
+  h1{
+    font-family:"Archivo", sans-serif;
+    font-weight:900;
+    font-size: clamp(38px, 6.4vw, 72px);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    max-width: 12em;
+  }
+  h1 .line{ display:block; color: var(--brand-white); }
+  h1 .line.accent{ color: var(--brand-red); }
+
+  .subtitle{
+    margin-top: 28px;
+    max-width: 30em;
+    font-family:"Inter", sans-serif;
+    font-weight: 500;
+    font-size: clamp(15px, 1.5vw, 18px);
+    line-height: 1.6;
+    color: var(--neutral-500);
+  }
+
+  .cta{
+    margin-top: 40px;
+    display:inline-flex;
+    align-items:center;
+    gap: 10px;
+    width: fit-content;
+    padding: 15px 28px;
+    border-radius: 8px;
+    background: var(--brand-red);
+    color: var(--brand-white);
+    font-family:"Inter", sans-serif;
+    font-weight:600;
+    font-size: clamp(14px, 1.2vw, 16px);
+    text-decoration:none;
+    box-shadow: 0 14px 30px -10px rgba(255, 73, 76, 0.4);
+    transition: background 0.16s ease, transform 0.16s ease;
+  }
+  .cta:hover{ background: var(--brand-red-hover); transform: translateY(-1px); }
+  .cta:focus-visible{ outline: 3px solid var(--brand-white); outline-offset: 3px; }
+
+  .cta-arrow{ display:inline-flex; transition: transform 0.16s ease; }
+  .cta:hover .cta-arrow{ transform: translateX(3px); }
+
+  /* acento — bloco vermelho, único gradiente permitido é a sombra do CTA acima */
+  .accent-bar{
+    position:absolute;
+    left: 8%;
+    bottom: 8%;
+    width: 64px;
+    height: 6px;
+    background: var(--brand-red);
+  }
+
+  @media (max-width: 560px){
+    body{ padding: 14px; }
+    .slide{ aspect-ratio: 9 / 13; }
+    .content{ padding: 0 9% 12% 9%; }
+    .header{ top: 24px; }
+    h1{ max-width: 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .cta, .cta-arrow{ transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <section class="slide" aria-label="Slide de capa — campanha Indique um amigo, ArenaCash">
+
+    <div class="header">
+      <div class="wordmark">ARENA<span class="cash">CASH</span></div>
+      <div class="pa-logo">PRODUCT ARENA</div>
+    </div>
+
+    <div class="content">
+      <p class="eyebrow">Programa de indicação</p>
+
+      <h1>
+        <span class="line">Indique um amigo</span>
+        <span class="line">e ganhe</span>
+        <span class="line accent">R$ 50.</span>
+      </h1>
+
+      <p class="subtitle">
+        Compartilhe seu código, seu amigo abre a conta e o dinheiro cai direto no seu saldo. Simples assim.
+      </p>
+
+      <a class="cta" href="#saiba-mais">
+        Saiba mais
+        <span class="cta-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="accent-bar" aria-hidden="true"></div>
+
+  </section>
+
+</body>
+</html>
