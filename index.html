@@ -11,8 +11,10 @@
 
   /* ===== Design tokens — ArenaCash design system v3.0 ===== */
   :root{
-    --brand-red: #ff494c;
-    --brand-red-hover: #e63b3e;
+    --brand-green: #22c55e;
+    --brand-green-hover: #16a34a;
+    --brand-purple: #a78bfa;
+    --brand-purple-hover: #8b5cf6;
     --brand-black: #0a0a0a;
     --brand-white: #ffffff;
     --neutral-900: #141414;
@@ -71,14 +73,14 @@
     font-size: clamp(15px, 1.5vw, 19px);
     letter-spacing: -0.01em;
   }
-  .wordmark .cash{ color: var(--brand-red); }
+  .wordmark .cash{ color: var(--brand-purple); }
 
   .pa-logo{
     font-family:"Inter", sans-serif;
     font-weight:600;
     font-size: 11px;
     letter-spacing: 0.03em;
-    color: var(--brand-red);
+    color: var(--brand-purple);
     white-space: nowrap;
   }
 
@@ -89,7 +91,7 @@
     font-size: clamp(11px, 1vw, 13px);
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--brand-red);
+    color: var(--brand-green);
     margin-bottom: 24px;
   }
 
@@ -102,7 +104,7 @@
     max-width: 12em;
   }
   h1 .line{ display:block; color: var(--brand-white); }
-  h1 .line.accent{ color: var(--brand-red); }
+  h1 .line.accent{ color: var(--brand-green); }
 
   .subtitle{
     margin-top: 28px;
@@ -122,29 +124,29 @@
     width: fit-content;
     padding: 15px 28px;
     border-radius: 8px;
-    background: var(--brand-red);
+    background: var(--brand-purple);
     color: var(--brand-white);
     font-family:"Inter", sans-serif;
     font-weight:600;
     font-size: clamp(14px, 1.2vw, 16px);
     text-decoration:none;
-    box-shadow: 0 14px 30px -10px rgba(255, 73, 76, 0.4);
+    box-shadow: 0 14px 30px -10px rgba(167, 139, 250, 0.4);
     transition: background 0.16s ease, transform 0.16s ease;
   }
-  .cta:hover{ background: var(--brand-red-hover); transform: translateY(-1px); }
+  .cta:hover{ background: var(--brand-purple-hover); transform: translateY(-1px); }
   .cta:focus-visible{ outline: 3px solid var(--brand-white); outline-offset: 3px; }
 
   .cta-arrow{ display:inline-flex; transition: transform 0.16s ease; }
   .cta:hover .cta-arrow{ transform: translateX(3px); }
 
-  /* acento — bloco vermelho, único gradiente permitido é a sombra do CTA acima */
+  /* acento — bloco verde, único gradiente permitido é a sombra do CTA acima */
   .accent-bar{
     position:absolute;
     left: 8%;
     bottom: 8%;
     width: 64px;
     height: 6px;
-    background: var(--brand-red);
+    background: var(--brand-green);
   }
 
   @media (max-width: 560px){
